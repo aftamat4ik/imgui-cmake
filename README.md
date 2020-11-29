@@ -35,6 +35,14 @@ That would basically copy and include in your library build the following files:
 `imgui_impl_win32.cpp` `imgui_impl_win32.h`, `imgui_impl_dx11.cpp`, `imgui_impl_dx11.h`
 and the headers will also be copied under `dist/include` directory.
 
+### Using With Cmake in Project
+```# imgui
+add_subdirectory(external/imgui-cmake-main)
+include_directories(external/imgui-cmake-main/imgui)
+//and
+target_link_libraries(${PROJECT_NAME} PRIVATE imgui)
+```
+it works, at least for me.
 ### Nuget Update
 
 This project was originally made for ease of imgui nuget update, as it allows fast creation of binary artifacts for various compiler configurations.
